@@ -5,11 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _express = _interopRequireDefault(require("express"));
+var _projectController = require("../controllers/projectController");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var router = _express["default"].Router();
-
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', _projectController.projects_all);
 var _default = exports["default"] = router;

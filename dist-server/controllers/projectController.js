@@ -19,7 +19,7 @@ var projects_all = exports.projects_all = (0, _expressAsyncHandler["default"])( 
         case 0:
           _context.next = 2;
           return _project["default"].find({}).sort({
-            order: -1
+            order: 1
           }).exec();
         case 2:
           allProjects = _context.sent;

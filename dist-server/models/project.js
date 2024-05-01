@@ -12,7 +12,15 @@ var projectSchema = new Schema({
     type: String,
     required: true
   },
+  name_es: {
+    type: String,
+    required: true
+  },
   description: {
+    type: String,
+    required: true
+  },
+  description_es: {
     type: String,
     required: true
   },
@@ -30,6 +38,10 @@ var projectSchema = new Schema({
   },
   order: {
     type: Number,
+    required: true
+  },
+  tags: {
+    type: Array,
     required: true
   }
 });

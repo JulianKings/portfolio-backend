@@ -21,7 +21,7 @@ const projects_extra = expressAsyncHandler(async (req, res, next) => {
 
 const projects_extra_one = expressAsyncHandler(async (req, res, next) => {
     if(req.params.id) {
-        const project = brokers.find(broker => broker.id === req.params.id);
+        const project = brokers.find(broker => broker.id === (+req.params.id));
         if(!project) {
             const responseObject = {
                 responseStatus: 'invalidRequest',

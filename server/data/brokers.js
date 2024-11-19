@@ -1,0 +1,35 @@
+export const brokers = [
+  {
+    id: 1,
+    nombre: 'Broker 1',
+    pais: 'España',
+    direccion: 'Dirección de Broker 1',
+    telefono: '+1 (123) 456-7890',
+    email: 'broker1@example.com',
+    licencia: 'tipo 1',
+    activo_desde: '2022-03-01',
+    sitio_web: 'https://www.broker1.com',
+  },
+  {
+    id: 2,
+    nombre: 'Broker 2',
+    pais: 'Francia',
+    direccion: 'Dirección deBroker 2',
+    telefono: '+1 (123) 456-7890',
+    email: 'broker2@example.com',
+    licencia: 'tipo 2',
+    activo_desde: '2022-02-01',
+    sitio_web: 'https://www.broker2.com',
+  },
+  {
+    id: 3,
+    nombre: 'Broker 3',
+    pais: 'Alemania',
+    direccion: 'Dirección de Broker 3',
+    telefono: '+1 (123) 456-7890',
+    email: 'broker3@example.com',
+    licencia: 'tipo 3',
+    activo_desde: '2022-01-01',
+    sitio_web: 'https://www.broker3.com',   
+  }
+];

@@ -1,3 +1,4 @@
+import { brokers } from "../data/brokers";
 import projectModel from "../models/project";
 
 import expressAsyncHandler from "express-async-handler";
@@ -14,24 +15,29 @@ const projects_all = expressAsyncHandler(async (req, res, next) => {
 });
 
 const projects_extra = expressAsyncHandler(async (req, res, next) => {
-    const responseObject = [
-        {
-            "id": 1,
-            "nombre": "Broker 1",
-            "pais": "España"
-        },
-        {
-            "id": 2,
-            "nombre": "Broker 2",
-            "pais": "Francia"
-        },
-        {
-            "id": 3,
-            "nombre": "Broker 3",
-            "pais": "Alemania"
-        },
-    ]
+    const responseObject = brokers;
     return res.json(responseObject);
 });
 
-export { projects_all, projects_extra };
+const projects_extra_one = expressAsyncHandler(async (req, res, next) => {
+    if(req.params.id) {
+        const project = brokers.find(broker => broker.id === req.params.id);
+        if(!project) {
+            const responseObject = {
+                responseStatus: 'invalidRequest',
+                message: 'No se ha encontrado el proyecto'
+            }
+            return res.json(responseObject);
+        } else {
+            res.json(project); 
+        }
+    } else {
+        const responseObject = {
+            responseStatus: 'invalidRequest',
+            message: 'No se ha encontrado el proyecto'
+        }
+        return res.json(responseObject);
+    }
+});
+
+export { projects_all, projects_extra, projects_extra_one };

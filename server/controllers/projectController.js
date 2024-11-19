@@ -13,4 +13,25 @@ const projects_all = expressAsyncHandler(async (req, res, next) => {
     return res.json(responseObject);
 });
 
-export { projects_all }
+const projects_extra = expressAsyncHandler(async (req, res, next) => {
+    const responseObject = [
+        {
+            "id": 1,
+            "nombre": "Broker 1",
+            "pais": "España"
+        },
+        {
+            "id": 2,
+            "nombre": "Broker 2",
+            "pais": "Francia"
+        },
+        {
+            "id": 3,
+            "nombre": "Broker 3",
+            "pais": "Alemania"
+        },
+    ]
+    return res.json(responseObject);
+});
+
+export { projects_all, projects_extra };
